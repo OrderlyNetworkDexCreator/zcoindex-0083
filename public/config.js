@@ -1,10 +1,11 @@
 window.__RUNTIME_CONFIG__ = {
   "VITE_ORDERLY_BROKER_ID": "demo",
   "VITE_ORDERLY_BROKER_NAME": "ZCoinDEX",
+  "VITE_BROKER_EOA_ADDRESS": "0x8b0b54b7f06712625220d144ae256677234bd06f",
   "VITE_DISABLE_MAINNET": "false",
   "VITE_DISABLE_TESTNET": "false",
   "VITE_ORDERLY_MAINNET_CHAINS": "42161,10,8453,1,56,900900900",
-  "VITE_ORDERLY_TESTNET_CHAINS": "421614,84532,97,901901901,11124",
+  "VITE_ORDERLY_TESTNET_CHAINS": "421614,97,901901901,11124",
   "VITE_DEFAULT_CHAIN": "",
   "VITE_PRIVY_APP_ID": "cmfv4ncl70024js0c9qsukbod",
   "VITE_PRIVY_LOGIN_METHODS": "email",
@@ -19,6 +20,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_HAS_SECONDARY_LOGO": "true",
   "VITE_ENABLED_MENUS": "Trading,Portfolio,Markets,Leaderboard,Rewards",
   "VITE_CUSTOM_MENUS": "Youtube, https://www.youtube.com/@ZCoinTV",
+  "VITE_ENABLE_SERVICE_DISCLAIMER_DIALOG": "false",
   "VITE_ENABLE_CAMPAIGNS": "false",
   "VITE_TELEGRAM_URL": "",
   "VITE_DISCORD_URL": "",
@@ -34,5 +36,9 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_AVAILABLE_LANGUAGES": "en,zh,ja,es,ko,vi,de,fr,ru,id,tr,it,pt,uk,pl,nl",
   "VITE_USE_CUSTOM_PNL_POSTERS": "false",
   "VITE_CUSTOM_PNL_POSTER_COUNT": "0",
-  "VITE_TRADING_VIEW_COLOR_CONFIG": "{\"upColor\":\"#00C896\",\"downColor\":\"#F7525F\",\"pnlUpColor\":\"#00C896\",\"pnlDownColor\":\"#F7525F\",\"chartBG\":\"#131722\"}"
+  "VITE_TRADING_VIEW_COLOR_CONFIG": "{\"upColor\":\"#00C896\",\"downColor\":\"#F7525F\",\"pnlUpColor\":\"#00C896\",\"pnlDownColor\":\"#F7525F\",\"chartBG\":\"#131722\"}",
+  "VITE_ANALYTICS_SCRIPT": "",
+  "VITE_SYMBOL_LIST": "",
+  "VITE_RESTRICTED_REGIONS": "",
+  "VITE_WHITELISTED_IPS": ""
 };
