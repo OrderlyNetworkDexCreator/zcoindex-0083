@@ -1,214 +1,126 @@
-/* ===== Orderly — Compact Trading Theme (Bitget-like) ===== */
-
-/* 1) Design tokens */
 :root {
-  /* Typography */
-  --oui-font-family: 'DIN Pro', 'DIN Alternate', 'Roboto', 'Arial', sans-serif;
-  --oui-font-size-base: 14px;      /* global base */
-  --oui-font-size-sm: 12px;        /* compact text (order book, table cells) */
-  --oui-font-size-lg: 16px;
+  --oui-font-family: 'Manrope', sans-serif;
 
-  /* Core colors */
-  --oui-color-primary: 255 255 255;         /* primary text on dark */
-  --oui-color-primary-light: 255 255 255;
-  --oui-color-primary-darken: 7 8 8;        /* nearly-black */
+  /* global font sizes */
+  --oui-font-size-xs: 12px;   /* small labels, table footers */
+  --oui-font-size-sm: 12px;   /* default small text */
+  --oui-font-size-md: 14px;   /* default body, chart labels */
+  --oui-font-size-lg: 16px;   /* nav items, headings */
+  --oui-font-size-xl: 20px;   /* section titles, key values */
+  --oui-font-size-2xl: 24px;  /* page titles */
+
+  /* specific semantic font sizes */
+  --oui-font-size-nav: var(--oui-font-size-lg);              /* 16px */
+  --oui-font-size-stats-label: 12px;                         /* stats labels */
+  --oui-font-size-stats-value: 15px;                         /* stats values (was 14px) */
+  --oui-font-size-chart-axis: var(--oui-font-size-sm);       /* 12px */
+  --oui-font-size-chart-lastprice: var(--oui-font-size-md);  /* 14px */
+  --oui-font-size-button: var(--oui-font-size-md);           /* 14px */
+  --oui-font-size-pair-name: var(--oui-font-size-xl);        /* 20px */
+
+  /*  order book specific sizes */
+  --oui-font-size-ob-header: 13px;   /* was 12px */
+  --oui-font-size-ob-row:    14px;   /* was 13px */
+  --oui-font-size-ob-mid:    19px;   /* was 20px */
+
+  /* font weights + line-heights */
+  --oui-font-weight-regular: 400;
+  --oui-font-weight-medium: 500;
+  --oui-font-weight-semibold: 600;
+  --oui-font-weight-bold: 700;
+
+  --oui-line-height-tight: 1.15;
+  --oui-line-height-normal: 1.35;
+  --oui-line-height-loose: 1.5;
+
+  /* colors */
+  --oui-color-primary: 56 210 199;
+  --oui-color-primary-light: 56 210 199;
+  --oui-color-primary-darken: 56 210 199;
   --oui-color-primary-contrast: 255 255 255;
 
+  --oui-color-link: 56 210 199;
+  --oui-color-link-light: 56 210 199;
+
+  --oui-color-secondary: 255 255 255;
+  --oui-color-tertiary: 218 218 218;
+  --oui-color-quaternary: 218 218 218;
+
+  --oui-color-danger: 245 97 139;
+  --oui-color-danger-light: 250 167 188;
+  --oui-color-danger-darken: 237 72 122;
+  --oui-color-danger-contrast: 255 255 255;
+
+  --oui-color-success: 41 233 169;
+  --oui-color-success-light: 101 240 194;
+  --oui-color-success-darken: 0 161 120;
+  --oui-color-success-contrast: 255 255 255;
+
+  --oui-color-warning: 255 209 70;
+  --oui-color-warning-light: 255 229 133;
+  --oui-color-warning-darken: 255 152 0;
+  --oui-color-warning-contrast: 255 255 255;
+
+  --oui-color-fill: 36 32 47;
+  --oui-color-fill-active: 40 46 58;
+
+  --oui-color-base-1: 93 83 123;
+  --oui-color-base-2: 81 72 107;
+  --oui-color-base-3: 68 61 69;
+  --oui-color-base-4: 57 52 74;
+  --oui-color-base-5: 51 46 66;
+  --oui-color-base-6: 43 38 56;
+  --oui-color-base-7: 64 59 88;
+  --oui-color-base-8: 29 26 38;
+  --oui-color-base-9: 15 26 31;
+  --oui-color-base-10: 30 38 43;
+
   --oui-color-base-foreground: 255 255 255;
-  --oui-color-fill: 21 21 21;               /* panels */
-  --oui-color-fill-active: 40 40 40;        /* hover/active panels */
+  --oui-color-line: 255 255 255;
 
-  /* Background scale (base-9/10 are page bg) */
-  --oui-color-base-1: 21 21 21;
-  --oui-color-base-2: 16 16 16;
-  --oui-color-base-3: 11 11 11;
-  --oui-color-base-4: 8 8 8;
-  --oui-color-base-5: 5 5 5;
-  --oui-color-base-6: 3 3 3;
-  --oui-color-base-7: 10 10 10;
-  --oui-color-base-8: 6 6 6;
-  --oui-color-base-9: 7 8 8;                /* page bg */
-  --oui-color-base-10: 7 8 8;               /* gutters/bg (same as page) */
+  --oui-color-trading-loss: 217 139 139;        /* red sell text */
+  --oui-color-trading-loss-contrast: 255 255 255;
+  --oui-color-trading-profit: 71 199 176;        /* green buy text */
+  --oui-color-trading-profit-contrast: 255 255 255;
 
-  /* Lines / dividers */
-  --oui-color-line: 45 45 45;               /* subtle grid lines */
+  /* gradients */
+  --oui-gradient-primary-start: 56 210 199;
+  --oui-gradient-primary-end: 101 240 194;
 
-  /* Links & Neutrals */
-  --oui-color-link: 169 169 169;
-  --oui-color-link-light: 192 192 192;
-  --oui-color-secondary: 192 192 192;
-  --oui-color-tertiary: 150 150 150;
-  --oui-color-quaternary: 120 120 120;
+  --oui-gradient-secondary-start: 81 42 121;
+  --oui-gradient-secondary-end: 56 210 199;
 
-  /* Trading status colors (from your screenshot sampling) */
-  --oui-color-trading-profit: 100 204 163;  /* #64CCA3 */
-  --oui-color-trading-profit-contrast: 0 0 0;
-  --oui-color-trading-loss: 223 86 72;      /* #DF5648 */
-  --oui-color-trading-loss-contrast: 0 0 0;
+  --oui-gradient-success-start: 1 83 68;
+  --oui-gradient-success-end: 41 223 169;
 
-  /* Alerts */
-  --oui-color-success: 0 170 120;
-  --oui-color-success-light: 40 200 150;
-  --oui-color-success-darken: 0 120 85;
-  --oui-color-success-contrast: 0 0 0;
+  --oui-gradient-danger-start: 153 24 76;
+  --oui-gradient-danger-end: 245 97 139;
 
-  --oui-color-danger: 200 70 60;
-  --oui-color-danger-light: 235 110 95;
-  --oui-color-danger-darken: 160 50 42;
-  --oui-color-danger-contrast: 0 0 0;
-
-  --oui-color-warning: 220 170 60;
-  --oui-color-warning-light: 240 200 110;
-  --oui-color-warning-darken: 170 120 30;
-  --oui-color-warning-contrast: 0 0 0;
-
-  /* Gradients (keep subtle/dark) */
-  --oui-gradient-primary-start: 26 26 26;
-  --oui-gradient-primary-end: 0 0 0;
-  --oui-gradient-secondary-start: 16 16 16;
-  --oui-gradient-secondary-end: 0 0 0;
-  --oui-gradient-success-start: 0 120 85;
-  --oui-gradient-success-end: 0 170 120;
-  --oui-gradient-danger-start: 160 50 42;
-  --oui-gradient-danger-end: 200 70 60;
-  --oui-gradient-brand-start: 255 255 255;
-  --oui-gradient-brand-end: 255 255 255;
+  --oui-gradient-brand-start: 56 210 199;
+  --oui-gradient-brand-end: 56 210 199;
   --oui-gradient-brand-stop-start: 6.62%;
   --oui-gradient-brand-stop-end: 86.5%;
   --oui-gradient-brand-angle: 17.44deg;
-  --oui-gradient-warning-start: 170 120 30;
-  --oui-gradient-warning-end: 220 170 60;
-  --oui-gradient-neutral-start: 5 5 5;
-  --oui-gradient-neutral-end: 10 10 10;
 
-  /* Radii — compact like Bitget */
-  --oui-rounded-sm: 2px;
-  --oui-rounded: 4px;
+  --oui-gradient-warning-start: 152 58 8;
+  --oui-gradient-warning-end: 255 209 70;
+
+  --oui-gradient-neutral-start: 27 29 24;
+  --oui-gradient-neutral-end: 38 41 46;
+
+  /* rounded */
+  --oui-rounded-sm: 0px;
+  --oui-rounded: 0px;
   --oui-rounded-md: 6px;
-  --oui-rounded-lg: 8px;
-  --oui-rounded-xl: 12px;
-  --oui-rounded-2xl: 16px;
+  --oui-rounded-lg: 0px;
+  --oui-rounded-xl: 0px;
+  --oui-rounded-2xl: 0px;
   --oui-rounded-full: 9999px;
 
-  /* Spacing — tighter to minimize visible gutters */
-  --oui-spacing-xs: 2px;
-  --oui-spacing-sm: 4px;
-  --oui-spacing-md: 6px;
-  --oui-spacing-lg: 8px;
-  --oui-spacing-xl: 12px;
+  /* spacing */
+  --oui-spacing-xs: 20rem;
+  --oui-spacing-sm: 22.5rem;
+  --oui-spacing-md: 26.25rem;
+  --oui-spacing-lg: 30rem;
+  --oui-spacing-xl: 33.75rem;
 }
-
-/* 2) Global base */
-html, body {
-  background: rgb(var(--oui-color-base-9));
-  color: rgb(var(--oui-color-base-foreground));
-  font-family: var(--oui-font-family);
-  font-size: var(--oui-font-size-base);
-  line-height: 1.35;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* 3) Compact layout — shrink the “red” gutters (base-10 bg showing through) */
-[class*="grid"], [class*="Grid"], [class*="row"],
-[class*="flex"], [class*="wrap"], [class*="layout"], [class*="container"] {
-  gap: 4px !important;
-  row-gap: 4px !important;
-  column-gap: 4px !important;
-}
-
-/* default margins reset (prevents thick background bands) */
-main, section, aside, header, footer, nav, article, div {
-  margin: 0;
-}
-
-/* Panels / cards */
-[class*="panel"], [class*="card"], [class*="box"], [class*="module"], [class*="section"] {
-  background: rgb(var(--oui-color-fill));
-  border: 1px solid rgba(var(--oui-color-line), 0.6);
-  border-radius: var(--oui-rounded);
-  padding: 8px;
-}
-
-/* 4) Trading UI specifics */
-
-/* Order book numbers (Bitget-like size & weight) */
-.orderbook, .orderbook * {
-  font-family: var(--oui-font-family);
-  font-size: var(--oui-font-size-sm); /* 12px */
-  font-weight: 400;                   /* normal, not bold */
-  letter-spacing: 0;
-}
-
-/* Best bid/ask row emphasis */
-.orderbook .best,
-.orderbook .best * {
-  font-weight: 600;
-  background: rgba(255,255,255,0.04);
-}
-
-/* Price colors */
-.text-profit, .price-up, .bid, .buy {
-  color: rgb(var(--oui-color-trading-profit));
-}
-.text-loss, .price-down, .ask, .sell {
-  color: rgb(var(--oui-color-trading-loss));
-}
-
-/* Tickers / big numbers (slightly larger) */
-.ticker, .mark-price, .big-number {
-  font-size: var(--oui-font-size-lg);
-  font-weight: 600;
-}
-
-/* Buttons */
-button, .btn {
-  background: rgb(var(--oui-color-fill-active));
-  color: rgb(var(--oui-color-base-foreground));
-  border: 1px solid rgba(var(--oui-color-line), 0.7);
-  border-radius: var(--oui-rounded);
-  padding: 8px 10px;
-  font-weight: 600;
-}
-button:hover, .btn:hover {
-  background: rgb(var(--oui-color-fill));
-}
-
-/* Inputs */
-input, select, textarea {
-  background: rgb(var(--oui-color-base-2));
-  color: rgb(var(--oui-color-base-foreground));
-  border: 1px solid rgba(var(--oui-color-line), 0.7);
-  border-radius: var(--oui-rounded);
-  padding: 8px;
-  font-size: var(--oui-font-size-base);
-}
-
-/* Tables (order history, positions) */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: var(--oui-font-size-sm);
-}
-th, td {
-  padding: 6px 8px;
-  border-bottom: 1px solid rgba(var(--oui-color-line), 0.5);
-}
-
-/* TradingView-ish grid lines */
-.tv-grid, .chart-grid, .grid-lines {
-  stroke: rgba(var(--oui-color-line), 0.35);
-}
-
-/* Links & muted text */
-a { color: rgb(var(--oui-color-link)); text-decoration: none; }
-a:hover { color: rgb(var(--oui-color-link-light)); }
-.muted { color: rgba(255,255,255,0.6); }
-
-/* Utility classes (use if needed) */
-.gap-2 { gap: 2px !important; }
-.gap-4 { gap: 4px !important; }
-.p-6 { padding: 6px !important; }
-.p-8 { padding: 8px !important; }
-.rounded { border-radius: var(--oui-rounded) !important; }
