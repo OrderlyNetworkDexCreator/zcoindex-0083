@@ -18,7 +18,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_APP_DESCRIPTION": "Orderly Trading Application",
   "VITE_HAS_PRIMARY_LOGO": "true",
   "VITE_HAS_SECONDARY_LOGO": "true",
-  "VITE_ENABLED_MENUS": "Trading,Portfolio,Markets,Leaderboard,Rewards",
+  "VITE_ENABLED_MENUS": "Trading,Portfolio,Markets,Leaderboard,Rewards,Swap",
   "VITE_CUSTOM_MENUS": "Youtube, https://www.youtube.com/@ZCoinTV",
   "VITE_ENABLE_SERVICE_DISCLAIMER_DIALOG": "false",
   "VITE_ENABLE_CAMPAIGNS": "false",
@@ -38,7 +38,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_CUSTOM_PNL_POSTER_COUNT": "0",
   "VITE_TRADING_VIEW_COLOR_CONFIG": "{\"upColor\":\"#00C896\",\"downColor\":\"#F7525F\",\"pnlUpColor\":\"#00C896\",\"pnlDownColor\":\"#F7525F\",\"chartBG\":\"#131722\"}",
   "VITE_ANALYTICS_SCRIPT": "",
-  "VITE_SYMBOL_LIST": "",
+  "VITE_SYMBOL_LIST": "PERP_BTC_USDC,PERP_ETH_USDC,PERP_XAG_USDC,PERP_SOL_USDC,PERP_XAU_USDC,PERP_HYPE_USDC,PERP_XRP_USDC,PERP_NAS100_USDC,PERP_GOOGL_USDC,PERP_NVDA_USDC,PERP_TSLA_USDC,PERP_SPX500_USDC",
   "VITE_RESTRICTED_REGIONS": "",
   "VITE_WHITELISTED_IPS": ""
 };
