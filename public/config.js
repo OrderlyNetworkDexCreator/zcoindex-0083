@@ -23,7 +23,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_ENABLE_SERVICE_DISCLAIMER_DIALOG": "false",
   "VITE_ENABLE_CAMPAIGNS": "false",
   "VITE_TELEGRAM_URL": "",
-  "VITE_DISCORD_URL": "",
+  "VITE_DISCORD_URL": "https://discord.com/invite/aybsJadYuh",
   "VITE_TWITTER_URL": "",
   "VITE_SEO_SITE_NAME": "ZCoinTV",
   "VITE_SEO_SITE_DESCRIPTION": "",
